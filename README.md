@@ -52,9 +52,9 @@ Interfaz de usuario moderna y responsiva para un dashboard administrativo. Desar
 
 Este proyecto se enfoca exclusivamente en el **frontend**. No contiene lógica de backend ni conexión a base de datos.
 
-## 📸 Vista previa
+## Enlace al sitio web para ver su funcionamiento
 
-> ¡Próximamente capturas o demo en video!
+> https://heberpalacio.github.io/dashboard_heber_palacio/
 
 ---
 
