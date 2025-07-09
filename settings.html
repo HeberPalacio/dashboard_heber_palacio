@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Ajustes</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h2 class="logo">AVTIC<span>PRO</span></h2>
+        <nav>
+          <ul>
+            <li class="active">
+              <a href="index.html">
+                <img
+                  src="icons/dashboard.png"
+                  alt="Dashboard"
+                  class="sidebar-icon"
+                />
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="widgets.html">
+                <img
+                  src="icons/widgets.png"
+                  alt="Widgets"
+                  class="sidebar-icon"
+                />
+                Widgets
+              </a>
+            </li>
+            <li>
+              <a href="notifications.html">
+                <img
+                  src="icons/notifications.png"
+                  alt="Notificaciones"
+                  class="sidebar-icon"
+                />
+                Notificaciones
+              </a>
+            </li>
+            <li>
+              <a href="settings.html">
+                <img
+                  src="icons/settings.png"
+                  alt="Ajustes"
+                  class="sidebar-icon"
+                />
+                Ajustes
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Contenido principal -->
+      <main class="main-content">
+        <div class="header-top">
+          <h1 class="titulo">Ajustes</h1>
+          <button class="theme-toggle-btn" aria-label="Toggle theme">
+            <img src="icons/dark_theme.png" alt="Modo oscuro" />
+          </button>
+        </div>
+
+        <div class="settings-grid">
+          <!-- Ajuste: Notificaciones -->
+          <div class="setting-card">
+            <h2>Notificaciones</h2>
+            <p>Activa o desactiva las notificaciones del sistema.</p>
+            <div class="setting-option">
+              <label for="notif-toggle">Habilitar notificaciones</label>
+              <input type="checkbox" id="notif-toggle" checked />
+            </div>
+          </div>
+
+          <!-- Ajuste: Idioma -->
+          <div class="setting-card">
+            <h2>Idioma</h2>
+            <p>Selecciona el idioma del panel.</p>
+            <div class="setting-option">
+              <select id="language-select">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="pt">Portugués</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Ajuste: Cuenta -->
+          <div class="setting-card">
+            <h2>Cuenta</h2>
+            <p>Administra la información de tu cuenta.</p>
+            <div class="setting-option">
+              <button class="btn">Editar perfil</button>
+              <button class="btn danger">Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

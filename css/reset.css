@@ -1,0 +1,26 @@
+/* ====== RESET CSS ====== */
+
+/* Elimina márgenes y padding predeterminados */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajusta html y body para ocupar toda la pantalla */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Mejora la legibilidad en todos los elementos */
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}

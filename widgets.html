@@ -1,0 +1,226 @@
+<head>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/widgets.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2 class="logo">AVTIC<span>PRO</span></h2>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">
+            <img
+              src="icons/dashboard.png"
+              alt="Dashboard"
+              class="sidebar-icon"
+            />
+            Dashboard
+          </a>
+        </li>
+        <li class="active">
+          <a href="widgets.html">
+            <img src="icons/widgets.png" alt="Widgets" class="sidebar-icon" />
+            Widgets
+          </a>
+        </li>
+        <li>
+          <a href="notifications.html">
+            <img
+              src="icons/notifications.png"
+              alt="Notificaciones"
+              class="sidebar-icon"
+            />
+            Notificaciones
+          </a>
+        </li>
+        <li>
+          <a href="settings.html">
+            <img src="icons/settings.png" alt="Ajustes" class="sidebar-icon" />
+            Ajustes
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="main-header">
+      <h1>Widgets</h1>
+      <div class="user-actions">
+        <!-- Botón de modo oscuro -->
+        <button class="theme-toggle-btn" aria-label="Toggle theme">
+          <img src="icons/dark_theme.png" alt="Modo oscuro" />
+        </button>
+
+        <!-- Botón Vista con dropdown -->
+        <div class="view-wrapper">
+          <button class="view-btn" aria-label="Cambiar vista">
+            Vista en Rejilla
+          </button>
+          <div class="view-dropdown">
+            <div class="view-header">Opciones de visualización</div>
+            <ul>
+              <li data-view="grid">Vista en Rejilla</li>
+              <li data-view="list">Vista en Lista</li>
+              <li data-view="expanded">Vista Expandida</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para añadir widget -->
+    <div class="modal-overlay" id="widgetModal">
+      <div class="modal-content">
+        <h2>Nuevo Widget</h2>
+        <form>
+          <label for="widgetTitle">Título</label>
+          <input
+            type="text"
+            id="widgetTitle"
+            placeholder="Ej: Tareas Pendientes"
+            required
+          />
+
+          <label for="widgetDesc">Descripción</label>
+          <textarea
+            id="widgetDesc"
+            placeholder="Describe el propósito del widget"
+            required
+          ></textarea>
+
+          <div class="modal-actions">
+            <button type="submit" class="save-btn">Guardar</button>
+            <button type="button" class="cancel-btn" id="closeModal">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Grid de widgets -->
+    <div class="widgets-grid" id="widgetsContainer">
+      <div class="widget-card">
+        <h3>Clima</h3>
+        <p>Muestra el clima actual de tu ciudad.</p>
+        <p class="widget-description-extended">
+          Visualiza la temperatura, condiciones actuales y pronóstico extendido
+          para tomar mejores decisiones diarias según el clima local. Este
+          widget te ofrece información precisa y actualizada al instante,
+          incluyendo temperatura, humedad, velocidad del viento y estado del
+          cielo. Además, podrás consultar el pronóstico detallado para las
+          próximas horas y días, facilitando la planificación de tus actividades
+          al aire libre, el transporte y tu vestimenta. Con gráficos intuitivos
+          y alertas meteorológicas personalizadas, estarás siempre preparado
+          ante cambios repentinos como lluvias, tormentas o calor extremo. Ideal
+          para quienes necesitan anticiparse y adaptarse a las condiciones
+          climáticas con confianza y rapidez.
+        </p>
+        <button class="widget-action-btn">Ver más</button>
+      </div>
+
+      <div class="widget-card">
+        <h3>Notas Rápidas</h3>
+        <p>Guarda tus ideas importantes.</p>
+        <p class="widget-description-extended">
+          Anotá pensamientos, tareas o recordatorios rápidos de forma accesible
+          y sin distracciones. Ideal para mantener el foco durante el día. Este
+          widget te permite capturar ideas al instante, organizar pendientes y
+          guardar cualquier dato relevante sin complicaciones. Su diseño
+          sencillo y funcional facilita la escritura rápida, evitando
+          interrupciones en tu flujo de trabajo. Podés acceder a tus notas desde
+          cualquier lugar y momento, asegurando que nada importante se pierda u
+          olvide. Además, cuenta con opciones para editar, eliminar o marcar
+          tareas como completadas, ayudándote a gestionar mejor tu tiempo y
+          prioridades. Perfecto para quienes buscan agilidad y orden en su
+          rutina diaria.
+        </p>
+        <button class="widget-action-btn">Ver más</button>
+      </div>
+
+      <div class="widget-card">
+        <h3>Calendario</h3>
+        <p>Consulta eventos próximos.</p>
+        <p class="widget-description-extended">
+          Revisá tus reuniones, tareas y fechas importantes organizadas por día
+          y semana. Ideal para mantener el control de tu agenda. Este calendario
+          interactivo te permite visualizar rápidamente tus compromisos, crear
+          nuevos eventos con facilidad y recibir recordatorios para que no se te
+          pase nada importante. Podés personalizar las vistas según tus
+          preferencias, filtrar por tipo de evento y sincronizar con otras
+          plataformas para tener todo en un solo lugar. Una herramienta clave
+          para organizar tu tiempo, priorizar actividades y aumentar tu
+          productividad diaria sin perder de vista lo que realmente importa.
+        </p>
+        <button class="widget-action-btn">Ver más</button>
+      </div>
+
+      <div class="widget-card">
+        <h3>Gráfico Personalizado</h3>
+        <p>Agrega un gráfico a medida.</p>
+        <p class="widget-description-extended">
+          Insertá gráficos con tus propios datos para visualizar resultados de
+          forma clara, interactiva y ajustada a tus objetivos. Este widget te
+          permite cargar información personalizada y transformarla en
+          representaciones visuales adaptadas a tus necesidades específicas.
+          Desde líneas de tendencia hasta comparativas categóricas, podés elegir
+          el tipo de gráfico más adecuado y configurar colores, etiquetas y
+          escalas. Ideal para reportes, presentaciones o monitoreo interno,
+          brinda una experiencia visual intuitiva y profesional. Además, su
+          diseño responsive asegura compatibilidad con distintos dispositivos,
+          facilitando el análisis en cualquier momento y lugar.
+        </p>
+        <button class="widget-action-btn">Ver más</button>
+      </div>
+
+      <div class="widget-card">
+        <h3>Estadísticas</h3>
+        <p>Visualiza tus métricas clave.</p>
+        <p class="widget-description-extended">
+          Accedé a tus KPIs o métricas principales en tiempo real. Ideal para
+          hacer un seguimiento ágil del rendimiento general. Este widget
+          centraliza indicadores clave como conversiones, tasa de retención,
+          ingresos, visitas y más, brindando una visión clara de la evolución
+          diaria, semanal o mensual del negocio. Su diseño interactivo permite
+          explorar los datos por categoría o periodo, facilitando la toma de
+          decisiones informadas. Gracias a su actualización constante, podés
+          detectar oportunidades de mejora, anticiparte a caídas en el
+          rendimiento o destacar áreas con crecimiento sostenido. Ideal para
+          líderes que necesitan información precisa y rápida sin perderse en
+          detalles.
+        </p>
+        <button class="widget-action-btn">Ver más</button>
+      </div>
+
+      <!-- Widget de añadir nuevo -->
+      <div
+        class="widget-card add-new-widget"
+        onclick="document.getElementById('widgetModal').style.display='flex'"
+      >
+        <div class="plus-sign">+</div>
+        <p>Agregar nuevo widget</p>
+      </div>
+    </div>
+    <!-- Cierre widgets-grid -->
+
+    <!-- Modal para mostrar descripción extendida -->
+    <div class="widget-modal" id="widgetModalExpand">
+      <div class="widget-modal-content">
+        <button class="widget-modal-close" id="closeWidgetModal">
+          &times;
+        </button>
+        <h3 id="modalWidgetTitle">Título del Widget</h3>
+        <p id="modalWidgetDescription">Descripción completa del widget...</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>

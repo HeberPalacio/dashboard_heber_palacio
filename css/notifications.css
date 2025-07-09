@@ -1,0 +1,216 @@
+/* Variables de color */
+:root {
+  --accent: #00a8e8;
+  --accent-hover: #007bbf;
+  --accent-hover-dark: #00c8ff;
+  --navy: #0d1b2a;
+  --navy-hover: #06111d;
+  --off-white: #f4f6f8;
+  --bg-light: #f5f7fa;
+  --bg-dark: #111;
+  --card-bg-light: #fff;
+  --card-bg-dark: #222;
+  --text-light: #2e2e2e;
+  --text-dark: #f4f6f8;
+  --text-muted-light: #555;
+  --text-muted-dark: #ccc;
+  --border-dashed: #c7c7c7;
+  --border-dashed-hover: var(--accent);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-light);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-light);
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark-mode .main {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Encabezado */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.main-header h1 {
+  color: var(--navy);
+}
+
+body.dark-mode .main-header h1 {
+  color: var(--off-white);
+}
+
+/* Lista de notificaciones */
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card-bg-light);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--accent);
+  cursor: default;
+}
+
+.notification:hover {
+  border-left-color: var(--accent-hover-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.notification.unread {
+  background-color: #fcfcfc;
+  border-left-color: var(--accent-hover);
+}
+
+.notification .content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: var(--navy);
+  user-select: none;
+}
+
+.notification .content p {
+  color: var(--text-muted-light);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  user-select: text;
+}
+
+.notification .timestamp {
+  font-size: 0.85rem;
+  color: var(--text-muted-light);
+}
+
+/* Modo oscuro para notificaciones */
+body.dark-mode .notification {
+  background-color: var(--card-bg-dark);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  border-left-color: var(--accent);
+}
+
+body.dark-mode .notification:hover {
+  border-left-color: var(--accent-hover-dark);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .notification.unread {
+  background-color: #2a2a2a;
+  border-left-color: var(--accent-hover-dark);
+}
+
+body.dark-mode .notification .content h3 {
+  color: var(--text-dark);
+}
+
+body.dark-mode .notification .content p,
+body.dark-mode .notification .timestamp {
+  color: var(--text-muted-dark);
+}
+
+/* Botón de cambio de tema */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+body.dark-mode .theme-toggle-btn {
+  color: var(--off-white);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pagination-btn,
+.pagination-number {
+  padding: 0.4rem 0.8rem;
+  margin: 0 0.5rem;
+  font-size: 0.95rem;
+  background-color: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination-number.active,
+.pagination-btn:hover,
+.pagination-number:hover {
+  background-color: var(--accent-hover-dark);
+  color: white;
+}
+
+body.dark-mode .pagination-btn,
+body.dark-mode .pagination-number {
+  background-color: var(--accent);
+  color: var(--off-white);
+}
+
+body.dark-mode .pagination-number.active {
+  background-color: var(--accent-hover-dark);
+  color: white;
+}

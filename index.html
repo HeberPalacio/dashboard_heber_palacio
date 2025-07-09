@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Pro</title>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Navegación principal">
+      <h1 class="logo">
+        AVTIC<span>PRO</span>
+      </h1>
+      <nav>
+        <ul>
+          <li class="active">
+            <a href="#" aria-current="page">
+              <img src="icons/dashboard.png" alt="" class="sidebar-icon" aria-hidden="true" />
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="widgets.html">
+              <img src="icons/widgets.png" alt="" class="sidebar-icon" aria-hidden="true" />
+              Widgets
+            </a>
+          </li>
+          <li>
+            <a href="notifications.html">
+              <img src="icons/notifications.png" alt="" class="sidebar-icon" aria-hidden="true" />
+              Notificaciones
+            </a>
+          </li>
+          <li>
+            <a href="settings.html">
+              <img src="icons/settings.png" alt="" class="sidebar-icon" aria-hidden="true" />
+              Ajustes
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Header -->
+      <header class="main-header">
+        <h2>Dashboard</h2>
+
+        <div class="user-actions">
+          <!-- Botón de modo oscuro -->
+          <button class="theme-toggle-btn" aria-label="Alternar modo oscuro">
+            <img src="icons/dark_theme.png" alt="Icono modo oscuro" />
+          </button>
+
+          <!-- Botón de alertas con dropdown -->
+          <div class="alert-wrapper">
+            <button
+              class="alert-btn"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="alertDropdown"
+              id="alertBtn"
+            >
+              <img
+                src="icons/alert.png"
+                alt="Icono de alertas"
+                style="width: 20px; height: 20px; margin-right: 8px;"
+                aria-hidden="true"
+              />
+              Alertas
+            </button>
+
+            <section
+              class="alert-dropdown"
+              id="alertDropdown"
+              role="region"
+              aria-live="polite"
+              aria-label="Notificaciones recientes"
+              hidden
+            >
+              <header class="alert-header">Notificaciones – Últimas 8 horas</header>
+              <ul>
+                <li>Nuevo usuario registrado</li>
+                <li>Se realizó una venta por $1,200</li>
+                <li>Conversión completada</li>
+                <li>Se actualizó un producto</li>
+                <li>Usuario premium activado</li>
+                <li>Reembolso procesado</li>
+                <li>Nueva suscripción</li>
+                <li>Comentario recibido</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </header>
+
+      <!-- Filtros -->
+      <section class="filters" aria-label="Filtros para las métricas">
+        <div class="filter-group">
+          <label for="dateFilter">Fecha:</label>
+          <select id="dateFilter" name="dateFilter">
+            <option value="all">Todas</option>
+            <option value="last7">Últimos 7 días</option>
+            <option value="last30">Últimos 30 días</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="categoryFilter">Categoría:</label>
+          <select id="categoryFilter" name="categoryFilter">
+            <option value="todas">Todas</option>
+            <option value="ventas">Ventas</option>
+            <option value="recaudado">Recaudado</option>
+            <option value="usuarios">Usuarios</option>
+            <option value="conversiones">Conversiones</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Métricas -->
+      <section class="metrics" aria-label="Métricas principales">
+        <article class="card metric" aria-labelledby="usuarios-label">
+          <img src="icons/users.png" alt="" class="metric-icon" aria-hidden="true" />
+          <div class="metric-text">
+            <span id="usuarios-label">Usuarios</span>
+            <strong>1,240</strong>
+          </div>
+        </article>
+
+        <article class="card metric" aria-labelledby="ventas-label">
+          <img src="icons/sales.png" alt="" class="metric-icon" aria-hidden="true" />
+          <div class="metric-text">
+            <span id="ventas-label">Ventas</span>
+            <strong>4,872</strong>
+          </div>
+        </article>
+
+        <article class="card metric" aria-labelledby="recaudado-label">
+          <img src="icons/collected.png" alt="" class="metric-icon" aria-hidden="true" />
+          <div class="metric-text">
+            <span id="recaudado-label">Recaudado</span>
+            <strong>$327,426</strong>
+          </div>
+        </article>
+
+        <article class="card metric" aria-labelledby="conversiones-label">
+          <img src="icons/conversions.png" alt="" class="metric-icon" aria-hidden="true" />
+          <div class="metric-text">
+            <span id="conversiones-label">Conversiones</span>
+            <strong>3,8%</strong>
+          </div>
+        </article>
+      </section>
+
+      <!-- Gráficos -->
+      <section class="charts" aria-label="Gráficos de métricas">
+        <div class="card chart-placeholder">
+          <canvas id="barChart" role="img" aria-label="Gráfico de barras"></canvas>
+        </div>
+        <div class="card chart-placeholder">
+          <canvas id="lineChart" role="img" aria-label="Gráfico de líneas"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
